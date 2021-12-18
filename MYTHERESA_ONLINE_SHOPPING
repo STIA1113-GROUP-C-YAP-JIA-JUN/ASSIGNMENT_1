@@ -1,0 +1,120 @@
+package assignmentOne;
+
+import java.util.Scanner;
+
+public class online_shopping {
+
+	public static void main(String[] args) {
+    String name;
+		String gender;
+		String choice;
+		String size;
+		String member;
+		String id;
+		String renew;
+		String duration;
+		String clothes;
+		double Tee_price= 450;
+		double Pants_price= 950;
+		double Blouse_price= 1450;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("---------------------------------------------------------------");
+		System.out.println("MYTHERESA : Online Platform for all luxury items");
+		System.out.println("---------------------------------------------------------------");
+		System.out.println("Customer Service Team at +49 89 127695-101 or customercare@mytheresa.com");
+		System.out.println("");
+		System.out.println("Welcome to MYTHERESA, online platform for all luxury items! ");
+		System.out.println("This platform only provide new and genuine luxury item.");
+		System.out.println();
+		
+		System.out.println("1. Please enter your full name: ");
+		name = sc.nextLine();
+		System.out.println("2. Please enter your gender: ");
+		gender= sc.nextLine();
+		System.out.print("Do you have memberhip? Please enter 'yes' or 'no' ");
+		choice = sc.nextLine();
+		System.out.print("Please enter the ID number for the customer with membership and non-membership will need to enter '-' ");
+		id = sc.nextLine();
+		System.out.print("Your membership is going to expired. Do you want to add-on? Please enter 'yes' or 'no' ");
+		renew = sc.nextLine();
+		System.out.print("Enter number '1' which is RM 20 for another 1 year membership or enter number '2' which is RM 35 for another 2 years membership or enter number '3' which is RM 50 for another 3 years membership. Which one would you like to prefer?");
+		duration = sc.nextLine();
+		
+
+		System.out.println("Types of clothes:");
+		System.out.println("   1.  Tee        |"+ " RM450");
+		System.out.println("   2.  Shorts        |"+ " RM580");
+		System.out.println("   3.  Skirt      |"+ " RM650");
+		System.out.println("   4.  Polo_shirt     |"+ " RM550");
+		System.out.println("   5.  Suit_jacket    |"+ " RM2000");
+		System.out.println("   6.  Pants   |"+ " RM950");
+		System.out.println("   7.  Blouse        |"+ " RM1450");
+		System.out.println("   8.  Dress        |"+ " RM3500");
+		System.out.println("   9.  Jacket |"+ " RM840");
+		System.out.println("   10. Hoodie     |"+ " RM680");
+		System.out.println("   11. Coat     |"+ " RM3800");
+		System.out.println("   12. Sweater     |"+ " RM1000");
+		System.out.println();
+		System.out.println("Please select the type of the handbag: ");
+		clothes = sc.nextLine();
+		
+		
+		System.out.println("===================Size Selection==================");
+		System.out.println();
+		System.out.println(" Extra Large ");
+		System.out.println(" Large ");
+		System.out.println(" Medium ");
+		System.out.println(" Small  ");
+		System.out.println(" Extra Small  ");
+		System.out.println();
+		System.out.println("Please select your size for clothes: ");
+		size = sc.nextLine();
+		System.out.println();
+		
+		
+		System.out.println("====================Membership=====================");
+		System.out.println("**10% offer will be given for the first item with membership, 25% offer will be given for the second item with membership and 45% offer will be given for the third item with membership");
+		System.out.println("**Shipping fee is available for every membership");
+		System.out.println();
+		System.out.println("Do you have a membership? Please enter your member id:");
+		member = sc.next();
+		id = sc.nextLine();
+		System.out.println();
+		
+		
+		System.out.println("====================Order Confirmation===================");
+		System.out.println();
+		System.out.println("The type of clothes you choose is: "+ "Tee" + "Pants" + "Blouse");
+		System.out.println("The size you choose is: " + "Large");
+		System.out.println("The quantity you needed is: " + "int number");
+		int number = sc.nextInt();
+		System.out.println("----------------------------------------------------");
+		System.out.println();
+		
+		double shipping = 0;
+		double total_original_price_before_promotion = Tee_price + Pants_price + Blouse_price + shipping;
+		double membership = Tee_price * 10/100 + Pants_price * 25/100 + Blouse_price * 45/100;
+		double total_price_after_promotion = Tee_price * 90/100 + Pants_price * 75/100 + Blouse_price * 55/100;
+		
+		
+		System.out.println("======================Payment========================");
+		System.out.println();
+		System.out.printf("The price of the tee =  RM "+"%.2f",Tee_price);
+		System.out.println();
+		System.out.printf("The price of the pants =  RM "+"%.2f",Pants_price);
+		System.out.println();
+		System.out.printf("The price of the blouse =  RM "+"%.2f",Blouse_price);
+		System.out.println();
+		
+		System.out.println("Please enter the amount paid =  RM ");
+		double amount = sc.nextInt();
+		System.out.printf("Total amount paid =  RM "+ "%.2f",amount);
+		System.out.println();
+		
+		double change = amount - total_price_after_promotion;
+		System.out.printf("Change =  RM " +"%.2f",change);
+		System.out.println();
+		System.out.println();
+		System.out.println("Thank you very much for using our platform!");
